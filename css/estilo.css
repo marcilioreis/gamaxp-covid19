@@ -1,0 +1,259 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+/* ===================
+    Tema Laranja e cinza
+   =================== */
+
+.header-container {
+    border-bottom: 20px solid #616161;
+}
+
+.footer-container,
+.main aside {
+    border-top: 20px solid #616161;
+}
+
+.header-container,
+.footer-container,
+.main aside {
+    background: #f16529;
+}
+
+.title {
+    color: white;
+}
+
+/* ==============
+    Menu
+   ============== */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+    color: white;
+    background: #616161;
+}
+
+nav a:hover {
+    color: white;
+    background: #f16529;
+
+    text-decoration: none;
+}
+
+
+/* ==============
+    Main
+   ============== */
+
+.main {
+    padding: 30px 0;
+}
+
+.main article h1 {
+    font-size: 2em;
+}
+
+.main aside {
+    color: white;
+    padding: 0px 5% 10px;
+}
+
+.footer-container footer {
+    color: white;
+    padding: 10px 0;
+}
+
+/* ==============
+    Home
+   ============== */
+
+.banner {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.banner img{
+    width: 100%;
+    position: absolute;
+    top: -50%;
+}
+
+.banner h1, .banner p{
+    color: #fff;
+    text-shadow: 2px 2px 4px #666;
+
+    position: relative;
+    z-index: 2;
+}
+.banner .lead {
+    background: #f1652970;
+
+    border: 1px solid #f16529;
+    border-radius: 5px;
+    display: block;
+    padding: 20px;
+    margin-top: 15%;
+    max-width: 45%;
+    margin-left: 50%;
+    position: relative;
+}
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+/* ====================
+    Menu
+   ==================== */
+
+    nav a {
+        margin: 0;
+        padding: 25px 2%;
+        margin-bottom: 0;
+        min-width: 100px;
+    }
+
+    nav li:first-child a {
+        margin-left: 0;
+    }
+
+    nav li:last-child a {
+        margin-right: 0;
+    }
+}
+
+/* ====================
+    DESKTOP
+   ==================== */
+@media only screen and (min-width: 768px) {
+
+/* ====================
+    Efeitos
+   ==================== */
+
+    .header-container,
+    .main aside {
+        -webkit-box-shadow: 0 5px 10px #aaa;
+           -moz-box-shadow: 0 5px 10px #aaa;
+                box-shadow: 0 5px 10px #aaa;
+    }
+
+/* ============
+    Menu
+   ============ */
+
+    .title {
+        float: left;
+    }
+
+    nav {
+        float: right;
+        width: 50%;
+    }
+
+/* ============
+    Geral
+   ============ */
+
+    .main article {
+        float: left;
+        width: 57%;
+    }
+
+    .main aside {
+        border-radius: 5px;
+
+        float: right;
+        width: 28%;
+    }
+}
+
+
+/* ===============
+    WIDE - TELAS GRANDES
+   =============== */
+@media only screen and (min-width: 1140px) {
+
+    .wrapper {
+        width: 1026px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
