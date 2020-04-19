@@ -209,37 +209,9 @@ nav a.active {
     color: #ffffff;
 }
 
-.fontes{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.fontes section{ 
-    border: 0;
-    margin-bottom: 10px;
-    width: 50%;
-}
-
-.fontes svg,
-.fontes img{
-    color: #000000;
-    display: block;
-    max-width: 200px;
-    max-height: 50px;
-}
-
-.fontes a:hover svg{
-    color: #000;
-}
-
 /* ==============
     Sobre
    ============== */
-
-article.about{
-    
-}
 
 aside.me h3 {
     text-transform: uppercase;
@@ -265,6 +237,64 @@ aside.me .find-me a img {
 
 aside.me .find-me a:hover img{
     filter: invert(100%);
+}
+
+/* ==============
+    Contato
+   ============== */
+.main.contato  {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.main.contato iframe{
+    width: 100%;
+}
+
+/* ==============
+    Saiba Mais
+   ============== */
+
+.fontes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fontes section{ 
+    border: 0;
+    margin-bottom: 10px;
+    min-width: 50%;
+}
+
+.fontes svg,
+.fontes img{
+    color: #000000;
+    display: block;
+    max-width: 200px;
+    max-height: 50px;
+    animation: showLogo 2s;
+    animation-delay: .2s;
+    animation-fill-mode: both;
+}
+
+.fontes a:hover svg,
+.fontes a:hover img{
+    color: #000;
+    animation: hoverLogo 1s;
+    animation-delay: .2s;
+    animation-fill-mode: both;
+}
+
+@keyframes showLogo {
+    from {top: 0px; opacity: .2;}
+    to {top: 0px; opacity: 1;}
+}
+
+@keyframes hoverLogo {
+    from {top: 0px; opacity: 1;}
+    to {top: 0px; opacity: .5;}
 }
 
 
@@ -402,6 +432,35 @@ aside.me .find-me a:hover img{
         margin: 0 auto;
     }
 }
+
+/* ===============
+    WIDE - TELAS GIGANTESCAS
+   =============== */
+   @media only screen and (min-width: 1600px) {
+
+    .wrapper {
+        width: 1226px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+
+    .banner img {
+        position: absolute;
+        top: -80%;
+    }
+
+    .banner.sobre img {
+        top: -100%;
+    }
+
+    .banner.contato img {
+        top: -40%;
+    }
+
+    .banner.saiba-mais img {
+        top: -20%;
+    }
+}
+
 
 /* ==========================================================================
    Helpers
