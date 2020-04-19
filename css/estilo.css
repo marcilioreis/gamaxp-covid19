@@ -28,8 +28,14 @@ body {
     background: #f16529;
 }
 
-.title {
+.title{
+    font-size: 1.9em;
+    text-align: center;
+}
+
+.title a{
     color: white;
+    text-decoration: none;
 }
 
 /* ==============
@@ -48,19 +54,21 @@ nav ul {
 nav a {
     display: block;
     margin-bottom: 10px;
-    padding: 15px 0;
+    padding: 15px 10px;
 
     text-align: center;
     text-decoration: none;
     font-weight: bold;
+    font-size: .9em;
+    text-transform: uppercase;
 
     color: white;
     background: #616161;
 }
 
-nav a:hover {
-    color: white;
-    background: #f16529;
+nav a:hover, 
+nav a.active {
+    background: #000000;
 
     text-decoration: none;
 }
@@ -80,6 +88,8 @@ nav a:hover {
 
 .main aside {
     color: white;
+
+    border-radius: 5px;
     padding: 0px 5% 10px;
 }
 
@@ -88,20 +98,38 @@ nav a:hover {
     padding: 10px 0;
 }
 
+.footer-container .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-container .find-me {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100px;
+}
+
+.footer-container .find-me a img {
+    height: 32px;
+    width: 32px;
+}
+
+.footer-container .find-me a:hover img{
+    filter: invert(100%);
+}
+
 /* ==============
     Home
    ============== */
 
 .banner {
     position: relative;
-    height: 500px;
     overflow: hidden;
 }
 
 .banner img{
     width: 100%;
-    position: absolute;
-    top: -50%;
 }
 
 .banner h1, .banner p{
@@ -119,16 +147,134 @@ nav a:hover {
     display: block;
     padding: 20px;
     margin-top: 15%;
-    max-width: 45%;
-    margin-left: 50%;
     position: relative;
 }
 
+.news section {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.news iframe {
+    max-width: 100%;
+}
+
+.news audio {
+    height: 50px;
+    width: 100%;
+}
+
+.news .img-news{
+    max-width: 560px;
+    overflow: hidden;
+}
+
+.news .img-news img{
+    min-height: 100%;
+    width: 100%;
+}
+
+.news h2 a,
+.news h2 a:visited{
+    color: #333333;
+    text-decoration: none;
+}
+.news h2 a:hover{
+    color: #f16529;
+}
+
+.news .veja-mais{
+    color: #ffffff;
+    line-height: 30px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+
+    background-color: #f16529;
+    border: 1px solid;
+    display: block;
+    padding: 2px;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+}
+
+.news .veja-mais:hover{
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.fontes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fontes section{ 
+    border: 0;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.fontes svg,
+.fontes img{
+    color: #000000;
+    display: block;
+    max-width: 200px;
+    max-height: 50px;
+}
+
+.fontes a:hover svg{
+    color: #000;
+}
+
+/* ==============
+    Sobre
+   ============== */
+
+article.about{
+    
+}
+
+aside.me h3 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+aside.me p {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0;
+}
+
+aside.me .find-me {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+aside.me .find-me a img {
+    height: 32px;
+    width: 32px;
+}
+
+aside.me .find-me a:hover img{
+    filter: invert(100%);
+}
 
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+
+/* ====================
+    TABLET
+    ==================== */
 
 @media only screen and (min-width: 480px) {
 
@@ -137,9 +283,9 @@ nav a:hover {
    ==================== */
 
     nav a {
-        margin: 0;
-        padding: 25px 2%;
+        margin-top: 15px;
         margin-bottom: 0;
+        padding: 15px 2%;
         min-width: 100px;
     }
 
@@ -150,6 +296,44 @@ nav a:hover {
     nav li:last-child a {
         margin-right: 0;
     }
+
+    .banner {
+        height: 500px;
+    }
+
+    .banner img {
+        position: absolute;
+        top: -50%;
+    }
+
+    .banner.sobre img {
+        top: -35%;
+    }
+
+    .banner.contato img {
+        top: -10%;
+    }
+
+    .banner.saiba-mais img {
+        top: -20%;
+    }
+
+    .banner .lead {
+        background: #f1652970;
+    
+        border: 1px solid #f16529;
+        border-radius: 5px;
+        display: block;
+        padding: 20px;
+        margin-top: 15%;
+        max-width: 40%;
+        margin-left: 60%;
+    }
+
+    .news .img-news{
+        height: 315px;
+    }
+
 }
 
 /* ====================
@@ -174,11 +358,12 @@ nav a:hover {
 
     .title {
         float: left;
+        text-align: left;
     }
 
     nav {
         float: right;
-        width: 50%;
+        width: 35%;
     }
 
 /* ============
@@ -187,14 +372,22 @@ nav a:hover {
 
     .main article {
         float: left;
-        width: 57%;
+        width: 55%;
     }
 
     .main aside {
-        border-radius: 5px;
-
         float: right;
-        width: 28%;
+        width: 30%;
+    }
+
+    article.about{
+        width: 60%;
+        float: right;
+    }
+
+    aside.me {
+        float: left;
+        width: 20%;
     }
 }
 
